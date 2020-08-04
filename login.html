@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Table Layout Login</title>
+	<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<div id="wrap">
+
+	<div id="main">
+		<div id="login">
+		<form action="https://www.naver.com" id="frm">
+			<table>
+				<tr>
+					<td>
+						<input type="text" placeholder="아이디"name="id" class="info" id="userID">
+						<span id="uID_Msg" class="msg">아이디를 입력해주세요.</span>
+					</td>
+					<td rowspan="2">
+						<button type="button" onclick="fnSbm()">로그인</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="password" placeholder="비밀번호"
+							name="pw" class="info" id="userPW">
+							<span id="uPW_Msg" class="msg">비밀번호를 입력해주세요.</span>
+					</td>
+				</tr>
+			</table>
+			</form>
+		</div>
+
+		<div id="join">
+				<table>
+					<tr>
+						<td>회원가입 ㅣ</td>
+						<td>아이디 찾기 ㅣ</td>
+						<td>비밀번호 찾기</td>
+					</tr>
+				</table>
+		</div>
+	</div>
+</div>
+
+<script>
+
+	function fnSbm() {
+		var frm = document.getElementById("frm");
+
+		var uID = document.getElementById("userID");
+		var uPW = document.getElementById("userPW");
+		var userID = uID.value;
+		var userPW = uPW.value;
+
+
+
+		if (userID == "") { //ID가 공백일때 PW는 무시함
+			document.getElementById("uID_Msg").style.display = "block";
+			document.getElementById("uPW_Msg").style.display = "none";
+			uID.focus();
+
+		} else if (userPW == "") { // PW가 공백일 때
+			document.getElementById("uPW_Msg").style.display = "block";
+			document.getElementById("uID_Msg").style.display = "none";
+			uPW.focus();
+		} else {
+			frm.submit();
+		}
+
+	}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
